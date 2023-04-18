@@ -1,0 +1,15 @@
+{
+  "name": "static-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "testing",
+    "start": "run"
+  },
+  "author": "Jamesgit22",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "8.2.4"
+  }
+}
