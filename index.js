@@ -14,9 +14,9 @@ const generateMod = require("./utils/generateMarkdown");
 // q7 - Is there a liscense for the project? list - choices: ['MIT', 'GPL', 'ISC']
 const questions = [
   "What is the title of your project?",
-  "Please enter a description of your project",
+  "Please enter a description of your project.",
   "How do you install your project?",
-  "Describe a use case for your project",
+  "Describe a use case for your project.",
   "Are there any credits to mention?",
   "Is there a license for the project?",
   "What is your GitHub Username?",
