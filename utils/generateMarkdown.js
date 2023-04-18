@@ -9,19 +9,17 @@ let licenseLink;
 function renderLicenseBadge(license) {
   switch(license) {
     case 'MIT':
-      console.log('MIT');
       licenseImg = 'https://img.shields.io/badge/License-MIT-yellow.svg';
       break;
     case 'ISC': 
-      console.log('ISC');
       licenseImg = 'https://img.shields.io/badge/License-ISC-blue.svg';
       break;
     case 'GPL v3':
-      console.log('GPL v3');
       licenseImg = 'https://img.shields.io/badge/License-GPLv3-blue.svg';
       break;
     default:
-      console.log('No license');
+      licenseImg = "";
+      
   }
 };
 
@@ -30,19 +28,17 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
   switch(license) {
     case 'MIT':
-      console.log('MIT link');
       licenseLink = 'https://opensource.org/licenses/MIT';
       break;
     case 'ISC': 
-      console.log('ISC link');
       licenseLink = 'https://opensource.org/licenses/ISC';
       break;
     case 'GPL v3':
-      console.log('GPL v3 link');
       licenseLink = 'https://www.gnu.org/licenses/gpl-3.0';
       break;
     default:
-      console.log('No license');
+      licenseLink = "";
+      
   }
 }
 
@@ -91,7 +87,7 @@ function generateMarkdown(answers) {
 
   Please feel free to get in contact if you have any questions about this project.
 
-  - Github: ${answers.username}
+  - Github: [${answers.username}](https://github.com/${answers.username})
   - Email: ${answers.email}`;
 }
 
