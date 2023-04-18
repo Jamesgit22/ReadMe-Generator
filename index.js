@@ -1,6 +1,8 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
+const generateMod = require("./utils/generateMarkdown");
+// const renderLicenseBadge = require("./utils/renderLicenseBadge");
 // TODO: Create an array of questions for user input
 
 // q1 - What is the title of your project?
@@ -17,6 +19,8 @@ const questions = [
   "Describe a use case for your project",
   "Are there any credits to mention?",
   "Is there a license for the project?",
+  "What is your GitHub Username?",
+  "What is your email address?"
 ];
 
 // TODO: Create a function to write README file
@@ -66,43 +70,21 @@ function init() {
         choices: ["MIT", "GPL", "ISC"],
         name: "projectLic",
       },
+      {
+        type: "input",
+        message: questions[6],
+        name: "username",
+      },
+      {
+        type: "input",
+        message: questions[7],
+        name: "email",
+      }
     ])
     .then((answers) => {
       // Use user feedback for... whatever!!
-      writeToFile(`README.md`, 
-    `# ${answers.projectName}
-
-## Description:
-      
-${answers.projectDesc}
-  
----
-
-## Table of Contents:
-  
-- [Instillation](#instillation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-
-## Instillation:
-
-${answers.projectIns}
-
-## Usage:
-
-${answers.projectUse}
-
-## ScreenShots:
-
-## Credits:
-
-${answers.projectCred}
-
-
-## License:
-
-This project uses the ${answers.projectLic} license.`);
+      generateMod.licenseBadge(answers.projectLic);
+      writeToFile(`README.md`, generateMod.markDown(answers));
       
 
       console.log(answers);
