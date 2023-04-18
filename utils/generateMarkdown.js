@@ -2,20 +2,24 @@
 //   [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 //   [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-
+let licenseImg;
+let licenseLink;
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   switch(license) {
     case 'MIT':
       console.log('MIT');
-      return 'https://img.shields.io/badge/License-MIT-yellow.svg';
+      licenseImg = 'https://img.shields.io/badge/License-MIT-yellow.svg';
+      break;
     case 'ISC': 
       console.log('ISC');
-      return 'https://img.shields.io/badge/License-ISC-blue.svg';
+      licenseImg = 'https://img.shields.io/badge/License-ISC-blue.svg';
+      break;
     case 'GPL v3':
       console.log('GPL v3');
-      return 'https://img.shields.io/badge/License-GPLv3-blue.svg';
+      licenseImg = 'https://img.shields.io/badge/License-GPLv3-blue.svg';
+      break;
     default:
       console.log('No license');
   }
@@ -23,15 +27,30 @@ function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseLink(license) {
+  switch(license) {
+    case 'MIT':
+      console.log('MIT link');
+      licenseLink = 'https://opensource.org/licenses/MIT';
+      break;
+    case 'ISC': 
+      console.log('ISC link');
+      licenseLink = 'https://opensource.org/licenses/ISC';
+      break;
+    case 'GPL v3':
+      console.log('GPL v3 link');
+      licenseLink = 'https://www.gnu.org/licenses/gpl-3.0';
+      break;
+    default:
+      console.log('No license');
+  }
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(answers) {
   return  `# ${answers.projectName}
+
+  ![${answers.projectLic} Badge](${licenseImg})
 
   ## Description:
         
@@ -64,7 +83,7 @@ function generateMarkdown(answers) {
   
   ## License:
   
-  This project uses the ${answers.projectLic} license.
+  This project uses the [${answers.projectLic}](${licenseLink}) license.
 
   ---
   
@@ -78,5 +97,6 @@ function generateMarkdown(answers) {
 
 module.exports = {
   markDown: generateMarkdown,
-  licenseBadge: renderLicenseBadge
+  licenseBadge: renderLicenseBadge,
+  licenseLinkFunc: renderLicenseLink
 };

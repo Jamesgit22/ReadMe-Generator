@@ -84,6 +84,7 @@ function init() {
     .then((answers) => {
       // Use user feedback for... whatever!!
       generateMod.licenseBadge(answers.projectLic);
+      generateMod.licenseLinkFunc(answers.projectLic);
       writeToFile(`README.md`, generateMod.markDown(answers));
       
 
