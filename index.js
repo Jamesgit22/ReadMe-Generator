@@ -61,13 +61,13 @@ function init() {
       {
         type: "checkbox",
         message: questions[4],
-        choices: ["collaborators ", "tutorials ", "third-party assets "],
+        choices: ["Collaborators ", "Tutorials ", "Third-party Assets "],
         name: "projectCred",
       },
       {
         type: "list",
         message: questions[5],
-        choices: ["MIT", "GPL", "ISC"],
+        choices: ["MIT", "GPL", "ISC", "No License"],
         name: "projectLic",
       },
       {

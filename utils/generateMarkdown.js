@@ -74,7 +74,12 @@ function generateMarkdown(answers) {
   
   ## Credits:
   
-  ${answers.projectCred}
+  ${answers.projectCred[0] || ''}
+
+  ${answers.projectCred[1] || ''}
+
+  ${answers.projectCred[2] || ''}
+  
   
   
   ## License:
