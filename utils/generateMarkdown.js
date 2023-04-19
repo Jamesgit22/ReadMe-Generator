@@ -81,6 +81,8 @@ function generateMarkdown(answers) {
   
   This project uses the [${answers.projectLic}](${licenseLink}) license.
 
+  ## Tests:
+
   ---
   
   ## Questions:
